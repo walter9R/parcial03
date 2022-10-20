@@ -26,23 +26,11 @@ class _PrincipalP03State extends State<PrincipalP03> {
       title: Padding(
           padding: const EdgeInsets.only(left: 0, right: 10),
           child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             const Text(
               "Parcial 03 ETPS-",
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            ),
-            MaterialButton(
-              minWidth: 30.0,
-              height: 40.0,
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              color: Colors.amber,
-              child: const Icon(
-                FeatherIcons.logOut,
-                color: Colors.white,
-              ),
             ),
           ])),
 
@@ -53,9 +41,13 @@ class _PrincipalP03State extends State<PrincipalP03> {
     return SingleChildScrollView(
       child:  Column(
         children: [
-
+          sliderDatos()
         ],
       ),
     );
+  }
+
+  Widget sliderDatos(){
+    return Container();
   }
 }
