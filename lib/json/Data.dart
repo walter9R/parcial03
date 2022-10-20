@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const List cat_type = [
+const List Datos = [
   {
     "name" : "Moises Alberto",
     "lastname" : "Fabian Cruz",
