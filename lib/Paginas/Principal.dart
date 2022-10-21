@@ -13,8 +13,8 @@ class PrincipalP03 extends StatefulWidget {
 }
 
 class _PrincipalP03State extends State<PrincipalP03> {
-  var PerroAPI = "https://www.freetogame.com/api/games";
-  List perros = [];
+  var PeliAPI = "https://www.freetogame.com/api/games";
+  List peliculas = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,16 +107,16 @@ class _PrincipalP03State extends State<PrincipalP03> {
   void initState() {
     super.initState();
     if (mounted) {
-      DatosPerros();
+      Peliculas();
     }
   }
 
-  void DatosPerros() {
+  void Peliculas() {
     var url = Uri.https("www.freetogame.com", "/api/games");
     http.get(url).then((value) {
       if (value.statusCode == 200) {
         var decodeJsonData = jsonDecode(value.body);
-        perros = decodeJsonData['algo'];
+        peliculas = decodeJsonData['algo'];
         setState(() {});
       }
     });
