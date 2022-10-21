@@ -160,7 +160,8 @@ class _PrincipalP03State extends State<PrincipalP03> {
                                       "\n" "Carnet: " +
                                       Datos[index]['number'],
                                   style: TextStyle(
-                                      fontSize: 16, fontWeight: FontWeight.bold),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ),
