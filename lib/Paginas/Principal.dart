@@ -20,7 +20,7 @@ class _PrincipalP03State extends State<PrincipalP03> {
   Widget build(BuildContext context) {
     //print(peliculas);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(223, 255, 255, 255),
       appBar: appBar(),
       body: datos(),
     );
@@ -33,9 +33,19 @@ class _PrincipalP03State extends State<PrincipalP03> {
       elevation: 0,
       title: Padding(
           padding: const EdgeInsets.only(left: 0, right: 10),
-          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            const Text(
-              "Parcial 03 ETPS-",
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/Images/img.png"),
+                  fit: BoxFit.cover
+                )
+              ),
+            )
+            ,const Text(
+              "Parcial 03 ETPS3",
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
@@ -70,7 +80,7 @@ class _PrincipalP03State extends State<PrincipalP03> {
                         ),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.blueAccent,
+                            color: Color.fromARGB(61, 41, 103, 211),
                             borderRadius: BorderRadius.all(Radius.circular(10))
                           ),
                           child: Stack(
@@ -151,7 +161,7 @@ class _PrincipalP03State extends State<PrincipalP03> {
                           Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              color: Color.fromARGB(255, 227, 235, 238),
+                              color: Color.fromARGB(115, 140, 167, 240),
                             ),
                             width: (MediaQuery.of(context).size.width) -
                                 (MediaQuery.of(context).size.width) / 15,

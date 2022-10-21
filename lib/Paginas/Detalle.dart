@@ -21,7 +21,7 @@ class _DetalleP03State extends State<DetalleP03> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(213, 229, 240, 240),
+      backgroundColor: Color.fromARGB(223, 255, 255, 255),
       appBar: appBar(),
       body: datos(),
     );
@@ -53,7 +53,7 @@ class _DetalleP03State extends State<DetalleP03> {
                         ),
                         child: Container(
                           decoration: BoxDecoration(
-                            //color: Colors.blueAccent,
+                            color: Color.fromARGB(61, 41, 103, 211),
                             borderRadius: BorderRadius.all(Radius.circular(10))
                           ),
                           child: Stack(
@@ -111,8 +111,18 @@ class _DetalleP03State extends State<DetalleP03> {
           padding: const EdgeInsets.only(left: 0, right: 0),
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/Images/img.png"),
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
             const Text(
-              "Parcial 03 ETPS - Detalle ",
+              "Parcial 03 ETPS3",
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
