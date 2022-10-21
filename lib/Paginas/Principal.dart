@@ -1,7 +1,9 @@
 import 'dart:convert';
 
+//import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+//import 'package:parcial03/Paginas/Detalle.dart';
 import 'package:parcial03/json/Data.dart';
 
 class PrincipalP03 extends StatefulWidget {
@@ -41,23 +43,13 @@ class _PrincipalP03State extends State<PrincipalP03> {
     );
   }
 
-  body() {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          sliderDatos(),
-          datos()
-        ],
-      ),
-    );
-  }
-
   Widget datos(){
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Stack(
       children: [
         sliderDatos(),
         Positioned(
-          top: 100,
+          top: 115,
           bottom: 0,
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -78,27 +70,41 @@ class _PrincipalP03State extends State<PrincipalP03> {
                         ),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.blueAccent,
                             borderRadius: BorderRadius.all(Radius.circular(10))
                           ),
                           child: Stack(
                             children: [
                               Positioned(
-                                top: 20,
-                                left: 20,
+                                bottom: 5,
+                                left: 8,
                                 child: Text(
-                                  peliculas[index]['title'],
+                                  "Titulo: " + peliculas[index]['title'] + "\n" 
+                                  "Genero: " + peliculas[index]['genre'],
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 13,
-                                    color: Colors.blueGrey
+                                    fontSize: 11,
+                                    color: Colors.black
                                   ),
                                 )
-                              )
+                              ),
+                              //Positioned(
+                                //top: 5,
+                                //right: 13,
+                                //child: CachedNetworkImage(
+                                  //imageUrl: peliculas[index]['thumbnail'],
+                                  //height:
+                                  //    (isPortrait) ? 80 : MediaQuery.of(context).size.width * 0.22,
+                                  //fit: BoxFit.cover,
+                                //),
+                              //),
                             ],
                           ),
                         ),
                       ),
+                      onTap: () {
+                        
+                      },
                     );
                   },
                 )
@@ -115,7 +121,6 @@ class _PrincipalP03State extends State<PrincipalP03> {
 
   Widget sliderDatos() {
     return Container(
-      //height: 150,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Padding(
@@ -129,17 +134,18 @@ class _PrincipalP03State extends State<PrincipalP03> {
                     //
                   },
                   child: Container(
-                    //height: 150,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      //color: Color.fromARGB(255, 227, 235, 238),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(2),
                       child: Column(
                         children: [
                           Container(
-                            color: Color.fromARGB(255, 227, 235, 238),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Color.fromARGB(255, 227, 235, 238),
+                            ),
                             width: (MediaQuery.of(context).size.width) -
                                 (MediaQuery.of(context).size.width) / 15,
                             height: 100,

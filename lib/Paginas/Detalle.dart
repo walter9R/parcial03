@@ -60,8 +60,7 @@ class _DetalleP03State extends State<DetalleP03> {
   body() {
     var ancho = MediaQuery.of(context).size.width;
     var alto = MediaQuery.of(context).size.height;
-    return SingleChildScrollView(
-      child: Column(
+    return Column(
         children: [
           Stack(
             alignment: Alignment.center,
@@ -248,7 +247,6 @@ class _DetalleP03State extends State<DetalleP03> {
             ],
           )
         ],
-      ),
-    );
+      );
   }
 }
