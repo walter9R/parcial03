@@ -44,15 +44,12 @@ class _PrincipalP03State extends State<PrincipalP03> {
   body() {
     return SingleChildScrollView(
       child: Column(
-        children: [
-          sliderDatos(),
-          datos()
-        ],
+        children: [sliderDatos(), datos()],
       ),
     );
   }
 
-  Widget datos(){
+  Widget datos() {
     return Stack(
       children: [
         sliderDatos(),
@@ -60,54 +57,46 @@ class _PrincipalP03State extends State<PrincipalP03> {
           top: 100,
           bottom: 0,
           width: MediaQuery.of(context).size.width,
-          child: Column(
-            children: [
-              peliculas.length != null?
-              Expanded(
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, childAspectRatio: 1.4
-                  ), 
-                  itemCount: peliculas.length,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 4.0,
-                          horizontal: 8.0
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(10))
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                top: 20,
-                                left: 20,
-                                child: Text(
-                                  peliculas[index]['title'],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 13,
-                                    color: Colors.blueGrey
-                                  ),
-                                )
-                              )
-                            ],
+          child: Column(children: [
+            peliculas.length != null
+                ? Expanded(
+                    child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2, childAspectRatio: 1.4),
+                    itemCount: peliculas.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 4.0, horizontal: 8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                    top: 20,
+                                    left: 20,
+                                    child: Text(
+                                      peliculas[index]['title'],
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 13,
+                                          color: Colors.blueGrey),
+                                    ))
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                )
-              ):
-              Center(
-                child: CircularProgressIndicator(),
-              )
-            ]
-          ),
+                      );
+                    },
+                  ))
+                : Center(
+                    child: CircularProgressIndicator(),
+                  )
+          ]),
         )
       ],
     );
@@ -154,7 +143,8 @@ class _PrincipalP03State extends State<PrincipalP03> {
                                       "\n" "Carnet: " +
                                       Datos[index]['number'],
                                   style: TextStyle(
-                                      fontSize: 16, fontWeight: FontWeight.bold),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ),
