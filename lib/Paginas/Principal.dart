@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-//import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-//import 'package:parcial03/Paginas/Detalle.dart';
+import 'package:parcial03/Paginas/Detalle.dart';
 import 'package:parcial03/json/Data.dart';
 
 class PrincipalP03 extends StatefulWidget {
@@ -88,22 +88,29 @@ class _PrincipalP03State extends State<PrincipalP03> {
                                   ),
                                 )
                               ),
-                              //Positioned(
-                                //top: 5,
-                                //right: 13,
-                                //child: CachedNetworkImage(
-                                  //imageUrl: peliculas[index]['thumbnail'],
-                                  //height:
-                                  //    (isPortrait) ? 80 : MediaQuery.of(context).size.width * 0.22,
-                                  //fit: BoxFit.cover,
-                                //),
-                              //),
+                              Positioned(
+                                top: 5,
+                                right: 13,
+                                child: CachedNetworkImage(
+                                  imageUrl: peliculas[index]['thumbnail'],
+                                  height:
+                                      (isPortrait) ? 80 : MediaQuery.of(context).size.width * 0.22,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
                       onTap: () {
-                        
+                        Navigator.push(
+                          context, MaterialPageRoute(
+                            builder: (_) => DetalleP03(
+                                          gamedetalle: peliculas[index],
+                                          color: Colors.green,
+                                          idgame: index)
+                          )
+                        );
                       },
                     );
                   },
