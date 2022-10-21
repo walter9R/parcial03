@@ -103,8 +103,16 @@ class _PrincipalP03State extends State<PrincipalP03> {
     );
   }
 
+  @override
+  void initState() {
+    super.initState();
+    if (mounted) {
+      DatosPerros();
+    }
+  }
+
   void DatosPerros() {
-    var url = Uri.https("https://www.freetogame.com", "/api/games");
+    var url = Uri.https("www.freetogame.com", "/api/games");
     http.get(url).then((value) {
       if (value.statusCode == 200) {
         var decodeJsonData = jsonDecode(value.body);
