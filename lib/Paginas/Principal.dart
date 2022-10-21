@@ -17,6 +17,7 @@ class _PrincipalP03State extends State<PrincipalP03> {
   List peliculas = [];
   @override
   Widget build(BuildContext context) {
+    //print(peliculas);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: appBar(),
@@ -44,7 +45,9 @@ class _PrincipalP03State extends State<PrincipalP03> {
   body() {
     return SingleChildScrollView(
       child: Column(
-        children: [sliderDatos()],
+        children: [
+          sliderDatos(),
+        ],
       ),
     );
   }
@@ -116,7 +119,7 @@ class _PrincipalP03State extends State<PrincipalP03> {
     http.get(url).then((value) {
       if (value.statusCode == 200) {
         var decodeJsonData = jsonDecode(value.body);
-        peliculas = decodeJsonData['algo'];
+        peliculas = decodeJsonData;
         setState(() {});
       }
     });
